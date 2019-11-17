@@ -30,7 +30,6 @@ print(data['last_review'].dtype)
 print(data['neighbourhood_group'].unique())
 
 #====================#============================#=========================#
-# segmented analysis
 
 '''Brooklyn Data'''
 
@@ -42,6 +41,7 @@ print(Brooklyn_data['neighbourhood'].nunique())
 
 '''Manhattan Data'''
 Manhattan_data = data[data['neighbourhood_group']=='Manhattan']
+
 plt.figure(figsize=(14,7))
 Manhattan_data.plot.scatter(x='latitude',y='longitude',c='green')
 
@@ -51,8 +51,6 @@ sns.distplot(Manhattan_data['price'],bins=30)
 plt.figure(figsize=(14,7))
 sns.barplot(x=Manhattan_data['neighbourhood'],y=Manhattan_data['price'])
 
-plt.figure(figsize=(14,7))
-sns.barplot(x=Manhattan_data['neighbourhood'],y=Manhattan_data['price'])
 plt.show()
 #====================#============================#=========================#
 
